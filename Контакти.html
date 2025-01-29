@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #00274d; /* Dark blue background */
+            color: #fff;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Main section */
+        .contact-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #18345cb0; /* Lighter dark blue background */
+            padding: 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Header Section */
+        .contact-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5em;
+            color: #f1c40f; /* Yellow color for header */
+            animation: slideFromTop 1s ease-out;
+        }
+
+        .contact-header p {
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        /* Navigation Menu */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1em 0;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+            margin-top: 1em;
+            z-index: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px; /* Added bottom margin */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f1c40f;
+            transform: translateY(-5px);
+        }
+
+        /* Contact Details Section */
+        .contact-details {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
+            animation-delay: 0.5s; /* Delays the effect */
+        }
+
+        .contact-details img.contact-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Circular photo */
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Animation for the photo (hover effect) */
+        .contact-details img.contact-photo:hover {
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+
+        .contact-details h2 {
+            color: #f1c40f;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        /* Extra Info Section */
+        .extra-info {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin-top: 30px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
+            animation-delay: 1s; /* Delay for more effect */
+        }
+
+        .extra-info h3 {
+            color: #f1c40f;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .extra-info p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .extra-info a {
+            color: #fcd116;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        /* Hover effect on the links */
+        .extra-info a:hover {
+            transform: translateY(-5px);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideFromTop {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="contact-page">
+        <!-- Main Header -->
+        <div class="contact-header">
+            <h1>Контакти</h1>
+            <p>Зв'яжіться з нами за допомогою наступних каналів.</p>
+        </div>
+
+        <!-- Навігаційне меню -->
+        <nav>
+           <a href="index.html">Головна</a>
+           <a href="Інформація.html">Інформація</a>
+           <a href="Про Партію.html">Про Партію</a>
+           <a href="Новини.html">Новини</a>
+        </nav>
+
+        <!-- Contact Information -->
+        <div class="contact-details">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/50.webp" alt="Єгор Фенікс" class="contact-photo">
+            <h2>Єгор Фенікс</h2>
+        </div>
+
+        <!-- Additional Info Section -->
+        <div class="extra-info">
+            <h3>Залиште повідомлення</h3>
+            <p>Ми завжди раді чути від вас! Якщо у вас є питання або коментарі, не соромтесь звертатися через Telegram або Discord.</p>
+            <p><strong>Задайте ваше питання тут:</strong></p>
+            <a href="https://t.me/egorkaua27" target="_blank">Напишіть у Telegram</a>
+            <a href="https://discord.com/users/egorelkov2_67247" target="_blank">Напишіть у Discord</a>
+        </div>
+    </section>
+</body>
+</html>

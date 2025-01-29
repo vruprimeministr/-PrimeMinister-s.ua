@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прем'єр-міністр</title>
+    <style>
+        /* Загальні стилі */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #001e47; /* Темно синій */
+            color: #fff;
+            overflow-x: hidden;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Анімація для заголовка */
+        @keyframes slideInTitle {
+            0% { transform: translateY(-100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInContent {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes zoomInImage {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Параллакс фон з гербом */
+.parallax {
+    background: url('https://github.com/DatsivRoman12334524/mou.ua/blob/main/depositphotos_52886601-stock-illustration-vector-decorative-ukrainian-trident-removebg-preview.png?raw=true') no-repeat center;
+    background-size: contain;
+    position: absolute;
+    top: 100%; /* Опускаємо нижче */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 100%;
+    z-index: -1; /* Зображення залишається позаду всього контенту */
+    opacity: 0.15;
+    animation: parallaxZoom 6s ease-in-out infinite alternate;
+}
+
+/* Анімація збільшення та зменшення */
+@keyframes parallaxZoom {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+
+
+                /* Заголовок та меню */
+                header {
+            background: rgba(0, 31, 91, 0.8);
+            padding: 1.5em 0; /* Зменшив висоту шапки */
+            text-align: center;
+            font-size: 2em; /* Зменшив шрифт заголовка */
+            margin: 0;
+            animation: slideInTitle 1.5s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            margin: 0;
+            font-weight: bold;
+            color: #fcd116; /* Жовтий */
+        }
+        header h4 {
+            margin-top: 0.5em;
+            font-size: 1.2em; /* Зменшив шрифт підзаголовка */
+            color: #fcd116;
+        }
+
+
+      /* Навігаційне меню */
+      nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em 0;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    margin-top: 1em;
+    z-index: 1;
+    border-radius: 20px; /* Add rounded corners */
+    overflow: hidden; /* To make sure content doesn't overflow the rounded corners */
+}
+
+
+nav a {
+    text-decoration: none;
+    margin: 0 25px;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 10px; /* Add some padding for better appearance */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 12px; /* Rounded corners */
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+        article strong {
+            color: #f39c12; /* Light Yellow for strong text */
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: #f1c40f; /* Yellow color for the button */
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: #00274d;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .read-more-btn:hover {
+            background-color: #f39c12; /* Light yellow for hover effect */
+        }
+
+
+/* Анімація появи меню */
+@keyframes slideInNav {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+        /* Креативний контент */
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 1100px;
+            padding: 3em;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+            animation: fadeInContent 2s ease-out;
+            z-index: 1;
+        }
+        .content img {
+            border-radius: 15px;
+            max-width: 250px;
+            float: left;
+            margin-right: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            animation: zoomInImage 1s ease-out;
+        }
+        .content h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #fcd116;
+            margin-bottom: 20px;
+        }
+        .content p {
+            text-align: justify;
+            font-size: 1.1em;
+            line-height: 1.6em;
+            color: #ddd;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInContent 3s ease-in-out forwards;
+        }
+
+        /* Мобільні стилі */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 10px 0;
+                font-size: 1.1em;
+            }
+            .content {
+                padding: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Параллакс фон з гербом -->
+    <div class="parallax"></div>
+
+    <!-- Заголовок -->
+    <header>
+        <h1>Офіційний сайт</h1>
+        <h4>Прем'єр Міністра Західної України</h4>
+    </header>
+
+    <!-- Навігаційне меню -->
+    <nav>
+        <a href="Інформація.html">Інформація</a>
+        <a href="Про Партію.html">Про Партію</a>
+        <a href="Новини.html">Новини</a>
+        <a href="Контакти.html">Контакти</a>
+    </nav>
+
+    <!-- Контент -->
+    <div class="content">
+        <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/50.webp" alt="Єгор Фенікс">
+        <h1>Єгор Фенікс</h1>
+        <p>Єгор Фенікс — Прем'єр міністр України, що очолює уряд та координує стратегічні напрями розвитку країни. Його ключові ініціативи зосереджені на реформах, зміцненні економіки та підвищенні рівня життя громадян. Єгор активно працює над покращенням міжнародних відносин та забезпечує стабільність в умовах сучасних глобальних викликів.</p>
+        <p>Для отримання додаткової інформації про діяльність Прем'єр міністра, перегляньте новини або звертайтеся до відповідних відділів через контактну інформацію на цьому сайті. Реформи Єгора Фенікса стають основою розвитку економіки та добробуту нації.</p>
+    </div>
+
+</body>
+</html>

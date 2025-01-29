@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інформація</title>
+    <style>
+        /* Загальні стилі */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #001e47; /* Темно синій */
+            color: #fff;
+            overflow-x: hidden;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Параллакс фон з гербом */
+        .parallax {
+            background: url('https://github.com/DatsivRoman12334524/mou.ua/blob/main/depositphotos_173703658-stock-illustration-ukraine-coat-of-arms-removebg-preview.png_27.01.2025_22_26_36-removebg-preview.png?raw=true') no-repeat center;
+            background-size: 140%; /* Збільшили масштаб зображення */
+            position: fixed; /* Фон тепер фіксований */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            animation: parallaxZoom 30s ease-in-out infinite;
+            background-attachment: fixed; /* Нерухомий фон при скролінгу */
+        }
+
+        /* Плавна анімація фону з гербом */
+        @keyframes parallaxZoom {
+            0% { transform: scale(1); opacity: 0.1; }
+            25% { transform: scale(1.05); opacity: 0.15; }
+            50% { transform: scale(1); opacity: 0.1; }
+            75% { transform: scale(1.02); opacity: 0.15; }
+            100% { transform: scale(1); opacity: 0.1; }
+        }
+
+        /* Заголовок */
+        header {
+            background: rgba(0, 31, 91, 0.8);
+            padding: 1.5em 0;
+            text-align: center;
+            font-size: 2.5em;
+            margin: 0;
+            animation: slideInTitle 1.5s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            margin: 0;
+            font-weight: bold;
+            color: #fcd116;
+        }
+
+        /* Плавне з'явлення заголовка */
+        @keyframes slideInTitle {
+            0% { transform: translateY(-100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Навігаційне меню */
+      nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em 0;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    margin-top: 1em;
+    z-index: 1;
+    border-radius: 20px; /* Add rounded corners */
+    overflow: hidden; /* To make sure content doesn't overflow the rounded corners */
+}
+
+
+nav a {
+    text-decoration: none;
+    margin: 0 25px;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 10px; /* Add some padding for better appearance */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 12px; /* Rounded corners */
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+        article strong {
+            color: #f39c12; /* Light Yellow for strong text */
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: #f1c40f; /* Yellow color for the button */
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: #00274d;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .read-more-btn:hover {
+            background-color: #f39c12; /* Light yellow for hover effect */
+        }
+    
+
+        /* Основний контент */
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 1100px;
+            padding: 3em;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+            animation: fadeInContent 2s ease-out;
+            z-index: 1;
+        }
+
+        /* Плавне з'явлення контенту */
+        @keyframes fadeInContent {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .content h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #fcd116;
+            margin-bottom: 20px;
+        }
+        .content p {
+            text-align: justify;
+            font-size: 1.1em;
+            line-height: 1.6em;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        /* Секція з анімацією для списку */
+        .info-list {
+            margin-top: 20px;
+            animation: fadeInList 2s ease-out;
+        }
+
+        @keyframes fadeInList {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Мобільні стилі */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 10px 0;
+                font-size: 1.1em;
+            }
+            .content {
+                padding: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Параллакс фон з гербом -->
+    <div class="parallax"></div>
+
+    <!-- Заголовок -->
+    <header>
+        <h1>Інформація</h1>
+    </header>
+
+    <!-- Навігаційне меню -->
+    <nav>
+        <a href="index.html">Головна</a>
+        <a href="Про Партію.html">Про Партію</a>
+        <a href="Новини.html">Новини</a>
+        <a href="Контакти.html">Контакти</a>
+    </nav>
+
+    <!-- Основний контент -->
+    <div class="content">
+        <h1>Діяльність Прем'єр Міністра України</h1>
+        <p>Прем'єр міністр є головою уряду України, який відповідає за координацію та імплементацію політики держави. Він здійснює управління урядовими програмами, контролює взаємодію між органами державної влади і визначає напрямки розвитку національної економіки. Однією з головних його задач є здійснення економічних та соціальних реформ, сприяння розвитку міжнародних відносин та забезпечення стабільності країни.</p>
+
+        <h2>Основні напрями роботи</h2>
+        <div class="info-list">
+            <p>1. Зміцнення економіки</p>
+            <p>2. Розвиток інфраструктури</p>
+            <p>3. Суспільно-політичні реформи</p>
+            <p>4. Забезпечення енергетичної безпеки</p>
+            <p>5. Міжнародне співробітництво</p>
+        </div>
+
+        <h2>Стратегічні ініціативи</h2>
+        <p>Діяльність Прем'єр-міністра направлена на покращення добробуту українських громадян та забезпечення стабільності у країні. Зокрема, велика увага приділяється реформам у сфері освіти, охорони здоров'я, енергетики та розвитку інфраструктури.</p>
+    </div>
+
+</body>
+</html>
